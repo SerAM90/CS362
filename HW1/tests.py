@@ -163,7 +163,7 @@ class TestValidateCreditCard(unittest.TestCase):
     def test_34(self):
         self.assertFalse(credit_card_validator("37828224631008")) #too few at 14
     def test_34(self):
-        self.assertFalse(credit_card_validator("37828224631000")) #too few at 13
+        self.assertFalse(credit_card_validator("3782822463100")) #too few at 13
     #34
     def test_35(self):
         self.assertTrue(credit_card_validator("348282246310005"))  #amex boundary test - correct with 15 digits
@@ -173,9 +173,9 @@ class TestValidateCreditCard(unittest.TestCase):
     def test_37(self):
         self.assertFalse(credit_card_validator("34828224631000898"))  #amex boundary test - too many numbers at 17
     def test_38(self):
-        self.assertFalse(credit_card_validator("34828224631008")) #too few at 14
+        self.assertFalse(credit_card_validator("37006638890768")) #too few at 14
     def test_39(self):
-        self.assertFalse(credit_card_validator("34828224631000")) #too few at 13
+        self.assertFalse(credit_card_validator("3482822463100")) #too few at 13
     #wrong prefix
     def test_70(self):
         self.assertTrue(credit_card_validator("388282246310005"))  #wrong prefix, right length
@@ -241,6 +241,7 @@ class TestValidateCreditCard(unittest.TestCase):
         self.assertFalse(credit_card_validator("3882822463100822"))  #wrong prefix, wrong length//16
     def test_97(self):
         self.assertFalse(credit_card_validator("3982822463000822"))  #wrong prefix, wrong length//16
+    
 
 
     # def test_12(self):
